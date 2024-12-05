@@ -1,0 +1,622 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  scroll-behavior: smooth; /* Untuk animasi bergulir lembut saat link ditekan */
+}
+
+#profil-siswa h2 {
+  text-align: center;
+  color: black;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+header {
+  background-color: #d30000; /* Merah gelap */
+  color: white;
+  display: flex; /* Gunakan Flexbox untuk tata letak horizontal */
+  align-items: center; /* Sejajarkan elemen secara vertikal */
+  justify-content: space-between; /* Jarak antara elemen kiri, tengah, dan kanan */
+  padding: 20px; /* Ruang di dalam header */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: slideDown 1s ease-in-out;
+  top: 0;
+  z-index: 0;
+}
+
+.logo {
+  width: 300px; /* Ukuran logo yang proporsional */
+  height: auto;
+}
+
+.judul {
+  text-align: center;
+}
+
+.judul h1 {
+  margin: 0px 0;
+  width: 250px;
+  height: auto;
+  font-size: 24px;
+  color: #fff; /* Warna teks agar kontras dengan background */
+}
+
+header img {
+  width: 100px; /* Ukuran logo */
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+header img:hover {
+  transform: scale(1.2); /* Memperbesar logo saat hover */
+  transition: transform 0.3s ease; /* Animasi agar perbesarannya lebih halus */
+}
+
+nav {
+  background-color: black; /* hiitam */
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  top: 0;
+  z-index: 0;
+  position: sticky;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+nav ul li {
+  margin: 0 15px;
+  position: relative;
+  background-color: black;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: grey; /* Hitam */
+}
+
+.banner {
+  background-color: #d30000; /* Merah terang */
+  color: white;
+  text-align: center;
+  padding: 60px 0;
+  margin: 0;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan teks */
+}
+
+.banner p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.banner .cta {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff5252; /* Merah terang */
+  color: #fff; /* Putih untuk kontras */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.banner .cta:hover {
+  background-color: #d30000; /* Warna hover lebih gelap */
+  transform: translateY(-5px); /* Memberikan efek naik */
+}
+
+.banner img {
+  width: 50px;
+  height: auto;
+  cursor: pointer; /* Menambahkan cursor pointer untuk menunjukkan interaksi */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.banner img:hover {
+  transform: scale(1.2); /* Memperbesar logo saat hover */
+  filter: brightness(1.2); /* Mencerahkan ikon */
+}
+
+.container {
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#profil-guru h2 {
+  text-align: center;
+  color: black;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.id-card {
+  background-color: #f9f9f9;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 300px; /* Lebar kartu */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px 0; /* Memberikan jarak vertikal atas dan bawah */
+}
+
+.id-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Agar foto tetap proporsional */
+  border-radius: 5px; /* Membuat sudut sedikit melengkung (opsional) */
+  margin: 10px;
+  border: 1px solid black; /* Bingkai foto */
+}
+
+.id-guru {
+  display: flex;
+  flex-direction: column; /* Mengatur vertikal untuk layar kecil */
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.foto-guru img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  object-fit: cover; /* Agar foto tetap proporsional */
+  border-radius: 5px; /* Membuat sudut sedikit melengkung (opsional) */
+  margin-bottom: 10px;
+  border: 2px solid black; /* Bingkai foto */
+}
+
+.contain-kartu {
+  display: flex;
+  flex-wrap: wrap; /* Agar kartu bisa menyesuaikan jika ada banyak */
+  gap: 20px; /* Jarak antar kartu */
+  justify-content: center; /* Pusatkan kartu */
+  padding: 10px;
+}
+
+.id-card img {
+  margin-left: 20px; /* Jarak antara teks dan gambar */
+  max-width: 180px;
+  border-radius: 8px;
+}
+
+#struktur-kelas {
+  text-align: center;
+  margin: 20px;
+}
+
+#struktur-kelas h2 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.card.struktur {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-item {
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-item h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.card-item strong {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Menggunakan grid untuk memastikan semua item dalam row sejajar */
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 4 kolom dalam satu baris */
+  gap: 10px;
+}
+
+.foto-struktur img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; /* Foto tetap proporsional */
+  border-radius: 5px; /* Bingkai kotak dengan sudut sedikit melengkung */
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+
+.text-content {
+  margin-top: 10px;
+  flex: 1;
+}
+
+.text-content h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.text-content p {
+  font-size: 14px;
+  color: #666;
+}
+
+#daftar-piket {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#daftar-piket h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#daftar-piket table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+#daftar-piket th,
+#daftar-piket td {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#daftar-piket th {
+  background-color: #4caf50;
+  color: black;
+}
+
+#daftar-piket tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#jadwal-pelajaran {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.jadwal-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.jadwal-card {
+  background-color: #ffd700; /* Warna kuning */
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 1; /* Default terlihat */
+  transition: transform 0.3s ease-in, box-shadow 0.3s ease-in;
+  border: 2px solid black;
+}
+
+.jadwal-card:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.jadwal-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.jadwal-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jadwal-card ul li {
+  border-bottom: 1px solid #333;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+#kegiatan-kelas {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+#kegiatan-kelas h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#kegiatan-kelas p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.media-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.media-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: grid;
+  border: 2px solid #000;
+}
+
+.media-item video,
+.media-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+.foto img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.foto img:hover {
+  opacity: 1;
+}
+
+/* Lightbox style */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+#lightbox button {
+  position: absolute;
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+footer {
+  background-color: #333; /* Hitam */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column; /* Elemen disusun vertikal */
+    align-items: center; /* Semua elemen di tengah */
+  }
+
+  .logo {
+    width: 60px; /* Perkecil logo untuk HP */
+    margin-bottom: 10px; /* Tambah jarak antar elemen */
+  }
+
+  .judul h1 {
+    font-size: 18px; /* Sesuaikan ukuran teks untuk layar kecil */
+  }
+
+  .id-card {
+    width: 120px; /* Ukuran lebih kecil di layar HP */
+    height: 160px;
+  }
+
+  .id-guru {
+    width: 100px; /* Ukuran lebih kecil di layar HP */
+    height: 160px;
+  }
+
+  .grid-table {
+    grid-template-columns: 1fr; /* Tampilkan secara vertikal di layar kecil */
+  }
+
+  .grid-table div {
+    border-left: none; /* Hapus garis kiri di layar kecil */
+    border-right: none; /* Hapus garis kanan di layar kecil */
+  }
+
+  #daftar-piket {
+    padding: 15px; /* Kurangi padding untuk layar kecil */
+  }
+
+  #daftar-piket h2 {
+    font-size: 20px; /* Kurangi ukuran font */
+  }
+
+  .jadwal-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .jadwal-card h3 {
+    font-size: 16px;
+  }
+
+  .jadwal-card ul li {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #header-sekolah {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    margin: 10px 0;
+    width: 200px;
+  }
+
+  .judul {
+    margin-bottom: 10px;
+  }
+
+  .id-card {
+    width: 300px; /* Ukuran lebih kecil di layar HP */
+    height: auto;
+  }
+
+  .contain-kartu {
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom pada layar kecil */
+  }
+
+  .id-guru {
+    width: 300px; /* Ukuran lebih kecil di layar HP */
+    height: auto;
+  }
+  .row {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+  }
+
+  .jadwal-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.753);
+    position: absolute;
+    top: 60px;
+    left: 0px;
+  }
+  nav ul li {
+    background-color: rgba(0, 0, 0, 0.377);
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .grid-table {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar sedang */
+  }
+}
